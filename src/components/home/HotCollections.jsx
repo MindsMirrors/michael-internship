@@ -6,11 +6,6 @@ import axios from "axios";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import $ from 'jquery';
-window.$ = window.jQuery = $;
-
-// Now you can import or require other modules/plugins that rely on global jQuery
-// For example: require('some-jquery-plugin');
 
 const HotCollections = () => {
   const [nftCards, setNftCards] = useState([]);
@@ -47,7 +42,6 @@ const HotCollections = () => {
 
   useEffect(() => {
     if (nftCards.length > 0) {
-      console.log(nftCards);
       setLoading(false);
     }
   }, [nftCards]);
@@ -70,26 +64,16 @@ const HotCollections = () => {
                   key={index}
                 >
                   <div className="nft_coll">
-                    <div className="nft_wrap">
-                      <Link to="/item-details">
-                        <img src={nftImage} className="lazy img-fluid" alt="" />
-                      </Link>
+                    <div className="skeleton-box" style={{width:"100%", height:"12rem", borderRadius:"8px"}}>
                     </div>
                     <div className="nft_coll_pp">
-                      <Link to="/author">
-                        <img
-                          className="lazy pp-coll"
-                          src={AuthorImage}
-                          alt=""
-                        />
-                      </Link>
+                       <div className="skeleton-box" style={{width:"48px", height:"48px", borderRadius:"48px"}}>
                       <i className="fa fa-check"></i>
                     </div>
-                    <div className="nft_coll_info">
-                      <Link to="/explore">
-                        <h4>Pinky Ocean</h4>
-                      </Link>
-                      <span>ERC-192</span>
+                    </div>
+                    <div className="nft_coll_info" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+                        <h4 className="skeleton-box" style={{width:"80px", height:"16px", margin:"2px"}}></h4>
+                        <h4 className="skeleton-box" style={{width:"40px", height:"16px", margin:"2px"}}></h4>
                     </div>
                   </div>
                 </div>
