@@ -19,6 +19,9 @@ const HotCollections = () => {
           items: 2,
         },
         992: {
+          items: 3,
+        },
+        1400: {
           items: 4,
         },
       },
@@ -86,7 +89,6 @@ const HotCollections = () => {
               >
                 {nftCards.map((nftCard) => (
                   <div
-                    // className="col-lg-3 col-md-6 col-sm-6 col-xs-12"
                     key={nftCard.id}
                   >
                     <div className="nft_coll">
